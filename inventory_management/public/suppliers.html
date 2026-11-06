@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers | Inventory Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">IM</span><span>INVENTORY<span class="brand-light">PRO</span></span></div>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav>
+            <a class="nav-link" href="dashboard.html"><span>▦</span> Dashboard</a>
+            <a class="nav-link" href="products.html"><span>▣</span> Products</a>
+            <a class="nav-link active" href="suppliers.html"><span>♧</span> Suppliers</a>
+            <a class="nav-link" href="transactions.html"><span>⇄</span> Transactions</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="status-dot"></div> System online</div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar"><div><p class="eyebrow">DIRECTORY</p><h1>Suppliers</h1></div><div class="topbar-right"><span class="avatar">AD</span></div></header>
+        <section class="page-intro"><div><h2>Supplier management</h2><p>Maintain contact information for your suppliers.</p></div></section>
+        <section class="panel form-panel">
+            <div class="panel-heading"><div><h3 id="supplierFormTitle">Add new supplier</h3><p>Enter the supplier's contact details.</p></div></div>
+            <form id="supplierForm">
+                <input type="hidden" id="supplierId">
+                <div class="form-grid">
+                    <label>Contact name<input id="supplierName" type="text" maxlength="100" placeholder="Full name" required></label>
+                    <label>Company<input id="company" type="text" maxlength="150" placeholder="Company name" required></label>
+                    <label>Phone<input id="phone" type="tel" maxlength="15" placeholder="Phone number"></label>
+                    <label>Email<input id="email" type="email" maxlength="100" placeholder="name@example.com"></label>
+                    <label class="full-width">Address<input id="address" type="text" maxlength="200" placeholder="Supplier address"></label>
+                </div>
+                <div class="form-actions"><button class="button button-primary" id="supplierSaveBtn" type="submit">Save supplier</button><button class="button button-secondary hidden" id="supplierCancelBtn" type="button">Cancel</button><span id="supplierFormMessage" class="message" aria-live="polite"></span></div>
+            </form>
+        </section>
+        <section class="panel table-panel">
+            <div class="panel-heading table-heading"><div><h3>Supplier directory</h3><p>All registered suppliers.</p></div><input class="search-input" id="supplierSearch" type="search" placeholder="Search suppliers..."></div>
+            <div class="table-wrap"><table><thead><tr><th>ID</th><th>Contact</th><th>Company</th><th>Phone</th><th>Email</th><th>Address</th><th>Actions</th></tr></thead><tbody id="supplierTable"><tr><td colspan="7" class="empty-cell">Loading suppliers...</td></tr></tbody></table></div>
+            <p id="supplierTableMessage" class="message table-message" aria-live="polite"></p>
+        </section>
+        <p class="page-footer">InventoryPro · Inventory Management System</p>
+    </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

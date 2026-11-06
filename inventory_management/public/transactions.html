@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions | Inventory Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">IM</span><span>INVENTORY<span class="brand-light">PRO</span></span></div>
+        <p class="nav-caption">WORKSPACE</p>
+        <nav>
+            <a class="nav-link" href="dashboard.html"><span>▦</span> Dashboard</a>
+            <a class="nav-link" href="products.html"><span>▣</span> Products</a>
+            <a class="nav-link" href="suppliers.html"><span>♧</span> Suppliers</a>
+            <a class="nav-link active" href="transactions.html"><span>⇄</span> Transactions</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="status-dot"></div> System online</div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar"><div><p class="eyebrow">STOCK CONTROL</p><h1>Transactions</h1></div><div class="topbar-right"><span class="avatar">AD</span></div></header>
+        <section class="page-intro"><div><h2>Stock transactions</h2><p>Record purchases and sales. Stock quantity updates automatically.</p></div></section>
+        <section class="panel form-panel">
+            <div class="panel-heading"><div><h3>Record a transaction</h3><p>Choose the product, supplier and movement type.</p></div></div>
+            <form id="transactionForm">
+                <div class="form-grid">
+                    <label>Product<select id="transactionProduct" required><option value="">Loading products...</option></select></label>
+                    <label>Supplier<select id="transactionSupplier" required><option value="">Loading suppliers...</option></select></label>
+                    <label>Transaction type<select id="transactionType" required><option value="Purchase">Purchase (add stock)</option><option value="Sale">Sale (remove stock)</option></select></label>
+                    <label>Quantity<input id="transactionQuantity" type="number" min="1" step="1" placeholder="Enter quantity" required></label>
+                    <label>Transaction date<input id="transactionDate" type="date" required></label>
+                </div>
+                <div class="form-actions"><button class="button button-primary" id="transactionSaveBtn" type="submit">Save transaction</button><span id="transactionFormMessage" class="message" aria-live="polite"></span></div>
+            </form>
+        </section>
+        <section class="panel table-panel">
+            <div class="panel-heading table-heading"><div><h3>Transaction history</h3><p>Recorded stock movements.</p></div><input class="search-input" id="transactionSearch" type="search" placeholder="Search history..."></div>
+            <div class="table-wrap"><table><thead><tr><th>ID</th><th>Date</th><th>Product</th><th>Supplier</th><th>Type</th><th>Quantity</th></tr></thead><tbody id="transactionTable"><tr><td colspan="6" class="empty-cell">Loading transactions...</td></tr></tbody></table></div>
+            <p id="transactionTableMessage" class="message table-message" aria-live="polite"></p>
+        </section>
+        <p class="page-footer">InventoryPro · Inventory Management System</p>
+    </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
